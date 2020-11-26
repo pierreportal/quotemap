@@ -8,11 +8,11 @@ const cookieparser = require("cookie-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const port = process.env.PORT || 5555;
+const port = process.env.PORT;
 mongoose
   .connect(
-    process.env.MONGODB_URI ||
-      `mongodb+srv://pierreportal:${process.env.MONGO_PASS}@cluster0.fqblb.mongodb.net/quotemap?retryWrites=true&w=majority` ||
+    // process.env.MONGODB_URI ||
+    `mongodb+srv://pierreportal:${process.env.MONGO_PASS}@cluster0.fqblb.mongodb.net/quotemap?retryWrites=true&w=majority` ||
       "mongodb://localhost/quotemap",
     {
       useNewUrlParser: true,
