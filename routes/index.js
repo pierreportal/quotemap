@@ -21,8 +21,8 @@ router.get("/random-quote", (req, res) => {
 router.post("/add-quote", (req, res) => {
   const { quote, secretId } = req.body;
 
-  if (secretId !== secretToken)
-    return res.status(500).json("You don't have the right to add quotes.");
+  // if (secretId !== secretToken)
+  //   return res.status(500).json("You don't have the right to add quotes.");
 
   return Quote.create({ quote }, (err, result) => {
     if (err) {
