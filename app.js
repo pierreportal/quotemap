@@ -11,15 +11,10 @@ const path = require("path");
 
 const port = process.env.PORT;
 mongoose
-  .connect(
-    // process.env.MONGODB_URI ||
-    `mongodb+srv://pierreportal:${process.env.MONGO_PASS}@cluster0.fqblb.mongodb.net/quotemap?retryWrites=true&w=majority` ||
-      "mongodb://localhost/quotemap",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/quotemap", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((connection) =>
     console.log(`Connected to ${connection.connections[0].name}`)
   )
