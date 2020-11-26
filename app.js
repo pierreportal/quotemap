@@ -7,6 +7,7 @@ const cookieparser = require("cookie-parser");
 
 const mongoose = require("mongoose");
 const logger = require("morgan");
+const path = require("path");
 
 const port = process.env.PORT;
 mongoose
