@@ -8,7 +8,7 @@ router.get("/quotes", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.post("add-quote", (req, res) => {
+router.post("/add-quote", (req, res) => {
   const { quote } = req.body;
   console.log("quote: ", quote);
   Quote.create({ quote }, (err, result) => {

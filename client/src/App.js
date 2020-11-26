@@ -4,28 +4,19 @@ import Header from "./components/Header";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const data = [
-  "This is a cool one",
-  "That one too",
-  "This is test",
-  "Another one here",
-  "What are you doing",
-  "Get a job",
-  "WHat am I doing with my life",
-];
-
 function App() {
+  const [quotes, setQuotes] = useState([]);
   useEffect(() => {
     axios
       .get("/quotes")
-      .then((res) => console.log(res.data))
+      .then((res) => setQuotes(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <Grid quotes={data} />
+      <Grid quotes={quotes} />
     </div>
   );
 }

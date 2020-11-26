@@ -1,5 +1,5 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap"); */
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee&display=swap");
+
 * {
   box-sizing: border-box;
   color: #252525;
@@ -33,20 +33,29 @@ html,
 }
 
 .grid {
+  /* box-sizing: border-box; */
+
   overflow-y: scroll;
   width: 100vw;
   height: calc(100vh - 2rem);
   display: grid;
   grid-template-columns: repeat(4, 25vw);
   grid-template-rows: repeat(3, 15rem);
-  justify-content: center;
+  /* justify-content: center; */
+  /* grid-gap: 1.3rem; */
 }
 
 .grid > div {
-  padding: 1rem;
-
+  display: flex;
+  align-items: center;
+  /* box-sizing: border-box; */
+  padding: 1.5rem;
+  overflow-y: scroll;
   /* border: dashed 1px red; */
   min-height: 15rem;
+}
+.grid > div:hover > h2 {
+  transform: scale(1.01);
 }
 
 .grid > div:first-of-type {
@@ -67,10 +76,14 @@ html,
 }
 
 .grid > div h2 {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+
   /* font-family: "Courier New", Courier, monospace; */
-  font-family: "Open Sans", sans-serif !important;
+
   font-size: 1.3rem;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  /* font-weight: 400; */
 }
