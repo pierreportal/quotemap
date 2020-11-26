@@ -8,7 +8,7 @@ const cookieparser = require("cookie-parser");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5555;
 mongoose
   .connect(
     process.env.MONGODB_URI ||
@@ -31,6 +31,11 @@ app.use(logger("dev"));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(cookieparser());
+
+app.use(express.static(path.join(__dirname, "../build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build"));
+});
 
 const index = require("./routes/index");
 app.use("/", index);
