@@ -4,6 +4,8 @@ const Quote = require("../models/Quote");
 
 const secretToken = process.env.SECRET;
 
+console.log("~~~~~~~~~~~~~~~~~", secretToken);
+
 router.get("/quotes", (req, res) => {
   return Quote.find({})
     .then((data) => res.json(data))
