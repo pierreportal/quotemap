@@ -10,6 +10,8 @@ const logger = require("morgan");
 const path = require("path");
 
 const port = process.env.PORT;
+const MONGO_PASS = process.env.MONGO_PASS;
+
 mongoose
   .connect(process.env.MONGODB_URI || "mongodb://localhost/quotemap", {
     useNewUrlParser: true,
@@ -20,7 +22,6 @@ mongoose
   )
   .catch((err) => console.log("Error connection", err));
 
-// const app_name = require("/.package.json").name;
 const app = express();
 
 app.use(logger("dev"));
