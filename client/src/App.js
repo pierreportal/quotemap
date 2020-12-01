@@ -16,7 +16,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Grid quotes={quotes} />
+      <h2>
+        This page is no longer available... But you can have a look at its
+        GitHub repo !
+      </h2>
+      {/* <Grid quotes={quotes} /> */}
     </div>
   );
 }
